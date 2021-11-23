@@ -25,10 +25,9 @@ namespace DataLayer.Backend
                 var price = lunchbox.Price;
                 var id = lunchbox.Id;
                 var type = lunchbox.FoodType;
-                Console.WriteLine($"{id}: {name}({type}), \n{restaurant}\n{price}");
-                Console.Write("\n");
+                Console.WriteLine($"{id}: {name}({type}), {restaurant}, {price}");
             }
-
+            Console.WriteLine("\n");
         }
 
         public void BuyLunchbox(string userEmail, int dish)
