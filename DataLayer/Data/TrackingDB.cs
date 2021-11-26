@@ -92,23 +92,23 @@ namespace DataLayer.Data
             {
                 new()
                 {
-                    Dish = "Fish n Chips'", Price = "70", FoodType = "Fish", Restaurant = restaurants[0], Customer = customers[0]
+                    Dish = "Fish n Chips'", Price = "70", FoodType = "Fisk", Restaurant = restaurants[0], Customer = customers[0]
                 },
                 new()
                 {
-                    Dish = "Höstgryta", Price = "70", FoodType = "Meat", Restaurant = restaurants[0], Customer = null
+                    Dish = "Höstgryta", Price = "70", FoodType = "Kött", Restaurant = restaurants[0], Customer = null
                 },
                 new()
                 {
-                    Dish = "Oxbringa", Price = "70", FoodType = "Meat", Restaurant = restaurants[0], Customer = null
+                    Dish = "Oxbringa", Price = "70", FoodType = "Kött", Restaurant = restaurants[0], Customer = null
                 },
                 new ()
                 {
-                    Dish = "Rosastekt Biff", Price = "70", FoodType = "Meat", Restaurant = restaurants[0], Customer = null
+                    Dish = "Rosastekt Biff", Price = "70", FoodType = "Kött", Restaurant = restaurants[0], Customer = null
                 },
                 new ()
                 {
-                    Dish = "Mexikansk Wrap", Price = "80", FoodType = "Meat", Restaurant = restaurants[1], Customer = null
+                    Dish = "Mexikansk Wrap", Price = "80", FoodType = "Kött", Restaurant = restaurants[1], Customer = null
                 },
                 new ()
                 {
@@ -120,15 +120,15 @@ namespace DataLayer.Data
                 },
                 new()
                 {
-                    Dish = "Kyckling Bowl", Price = "72", FoodType = "Meat", Restaurant = restaurants[1], Customer = null
+                    Dish = "Kyckling Bowl", Price = "72", FoodType = "Kött", Restaurant = restaurants[1], Customer = null
                 },
                 new()
                 {
-                    Dish = "Teriyaki Lax", Price = "70", FoodType = "Fish", Restaurant = restaurants[2], Customer = null
+                    Dish = "Teriyaki Lax", Price = "70", FoodType = "Fisk", Restaurant = restaurants[2], Customer = null
                 },
                 new()
                 {
-                    Dish = "Räksallad", Price = "60", FoodType = "Fish", Restaurant = restaurants[2], Customer = null
+                    Dish = "Räksallad", Price = "60", FoodType = "Fisk", Restaurant = restaurants[2], Customer = null
                 },
                 new()
                 {
@@ -136,7 +136,7 @@ namespace DataLayer.Data
                 },
                 new ()
                 {
-                    Dish = "Kycklingsallad", Price = "58", FoodType = "Meat", Restaurant = restaurants[2], Customer = null
+                    Dish = "Kycklingsallad", Price = "58", FoodType = "Kött", Restaurant = restaurants[2], Customer = null
                 }
             };
             LunchBoxes.AddRange(lunchboxes);
