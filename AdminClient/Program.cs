@@ -26,6 +26,7 @@ while (keepRunning)
             Console.WriteLine("Press 4 and 'enter' If you want to see all restaurants");
             Console.WriteLine("Press 5 and 'enter' If you want to add a new restaurant");
             Console.WriteLine("Press 0 and 'enter' To exit");
+            
             if (int.TryParse(Console.ReadLine(), out input))
             {
                 switch (input)
