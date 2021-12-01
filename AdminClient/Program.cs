@@ -2,6 +2,7 @@
 using DataLayer.Backend;
 using DataLayer.Data;
 
+AdminBackend adminBackend = new AdminBackend();
 int input;
 bool keepRunning = true;
 while (keepRunning)
@@ -33,23 +34,23 @@ while (keepRunning)
                 {
                     case 1:
                         Console.WriteLine("Database initialized!");
-                        AdminBackend.PrepDatabase();
+                        adminBackend.PrepDatabase();
                         break;
                     case 2:
                         Console.WriteLine("All customers:");
-                        AdminBackend.ShowUsers();
+                        adminBackend.ShowUsers();
                         break;
                     case 3:
-                        AdminBackend.ShowUsers();
+                        adminBackend.ShowUsers();
                         Console.WriteLine("What customer Id do you want to delete?");
                         if (int.TryParse(Console.ReadLine(), out input))
                         {
-                            AdminBackend.DeleteUsers(input);
+                            adminBackend.DeleteUsers(input);
                         }
                         break;
                     case 4:
                         Console.WriteLine("All restaurants:");
-                        AdminBackend.ShowRestaurants();
+                        adminBackend.ShowRestaurants();
                         break;
                     case 5:
                         Console.WriteLine("Add new restaurant:");
@@ -62,7 +63,7 @@ while (keepRunning)
                         Console.WriteLine("Phone-number of restaurant: ");
                         string restaurantPhoneNumber = Console.ReadLine();
                         
-                        AdminBackend.AddRestaurant(restaurantName, restaurantCity, restaurantStreet, restaurantPhoneNumber);
+                        adminBackend.AddRestaurant(restaurantName, restaurantCity, restaurantStreet, restaurantPhoneNumber);
                         break;
                     case 0:
                         Console.WriteLine("Bye bye");

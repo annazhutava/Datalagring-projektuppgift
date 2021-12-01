@@ -10,7 +10,7 @@ namespace DataLayer.Backend
 {
     public class AdminBackend
     {
-        public static void PrepDatabase()
+        public void PrepDatabase()
         {
             using var ctx = new TrackingDb();
             ctx.Database.EnsureDeleted();
@@ -18,7 +18,7 @@ namespace DataLayer.Backend
             ctx.Seed();
         }
 
-        public static void ShowUsers()
+        public void ShowUsers()
         {
             using var ctx = new TrackingDb();
             var query = ctx
@@ -32,7 +32,7 @@ namespace DataLayer.Backend
             }
             Console.Write("\n");
         }
-        public static void DeleteUsers(int input)
+        public void DeleteUsers(int input)
         {
             using var ctx = new TrackingDb();
             var selectUser = ctx.Customers.FirstOrDefault(c => c.Id == input);
@@ -47,7 +47,7 @@ namespace DataLayer.Backend
             }
         }
 
-        public static void AddRestaurant(string name, string city, string street, string phonenumber)
+        public void AddRestaurant(string name, string city, string street, string phonenumber)
         {
             using var ctx = new TrackingDb();
 
@@ -62,7 +62,7 @@ namespace DataLayer.Backend
             ctx.Add(newRestaurant);
             ctx.SaveChanges();
         }
-        public static void ShowRestaurants()
+        public void ShowRestaurants()
         {
             using var ctx = new TrackingDb();
             var query = ctx
