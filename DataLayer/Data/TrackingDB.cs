@@ -152,6 +152,7 @@ namespace DataLayer.Data
             {
                 new() {UserName = "A", Password = "A"}
             };
+            Admin.AddRange(admins);
             
             SaveChanges();
         }
