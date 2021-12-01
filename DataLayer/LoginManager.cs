@@ -29,6 +29,6 @@ namespace DataLayer
             }
 
             return null;
-        }
+        } //Ska vi ha så att det vi gör loggas?
     }
 }

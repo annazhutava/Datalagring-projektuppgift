@@ -150,7 +150,7 @@ namespace DataLayer.Data
 
             var admins = new Admin[]
             {
-                new() {UserName = "A", Password = "A"}
+                new() {UserName = "Admin", Password = "Password"}
             };
             Admin.AddRange(admins);
             
