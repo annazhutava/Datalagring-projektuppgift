@@ -50,5 +50,65 @@ namespace DataLayer.Backend
             
             ctx.SaveChanges();
         }
+        public void AvailableLunchboxesType(string mattyp)
+        {
+            using var ctx = new TrackingDb();
+            mattyp = mattyp.ToLower();
+            if (mattyp == "kött")
+            {
+                var query = ctx
+                    .LunchBoxes
+                    .Where(l => l.Customer == null && l.FoodType == "Kött")
+                    .OrderBy(l => l.Price)
+                    .Include(l => l.Restaurant);
+                foreach (var lunchbox in query)
+                {
+                    var name = lunchbox.Dish;
+                    var restaurant = lunchbox.Restaurant.Name;
+                    var price = lunchbox.Price;
+                    var id = lunchbox.Id;
+                    var type = lunchbox.FoodType;
+                    Console.WriteLine($"{id}: {name}({type}), {restaurant}, {price}");
+                }
+                Console.WriteLine("\n");
+            }
+            if (mattyp == "fisk")
+            {
+                var query = ctx
+                    .LunchBoxes
+                    .Where(l => l.Customer == null && l.FoodType == "Fisk")
+                    .OrderBy(l => l.Price)
+                    .Include(l => l.Restaurant);
+                foreach (var lunchbox in query)
+                {
+                    var name = lunchbox.Dish;
+                    var restaurant = lunchbox.Restaurant.Name;
+                    var price = lunchbox.Price;
+                    var id = lunchbox.Id;
+                    var type = lunchbox.FoodType;
+                    Console.WriteLine($"{id}: {name}({type}), {restaurant}, {price}");
+                }
+                Console.WriteLine("\n");
+            }
+            if (mattyp == "veg")
+            {
+                var query = ctx
+                    .LunchBoxes
+                    .Where(l => l.Customer == null && l.FoodType == "Veg")
+                    .OrderBy(l => l.Price)
+                    .Include(l => l.Restaurant);
+                foreach (var lunchbox in query)
+                {
+                    var name = lunchbox.Dish;
+                    var restaurant = lunchbox.Restaurant.Name;
+                    var price = lunchbox.Price;
+                    var id = lunchbox.Id;
+                    var type = lunchbox.FoodType;
+                    Console.WriteLine($"{id}: {name}({type}), {restaurant}, {price}");
+                }
+                Console.WriteLine("\n");
+            }
+            else { return; }
+        }
     }
 }
