@@ -1,20 +1,15 @@
-ï»¿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataLayer.Backend;
 using DataLayer.Data;
-using DataLayer.Model;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace BackendTests
 {
-    public class Tests
+    public class TestSuite
     {
         private RestaurantBackend _restaurantBackend;
-        public Tests()
+        public TestSuite()
         {
             _restaurantBackend = new RestaurantBackend();
 
@@ -62,6 +57,23 @@ namespace BackendTests
             lunchbox = query.First();
 
             Assert.Equal("pontusberg830@gmail.com", lunchbox.Customer.Email);
+
+        }
+        [Fact]
+        public void AdminBackendTest()
+        {
+            using var ctx = new TrackingDb();
+            AdminBackend adminBackend = new AdminBackend();
+
+            adminBackend.PrepDatabase();
+            adminBackend.AddRestaurant("Hästen", "Dalarna", "Älvdalen", "0251-10010");
+
+            var query = ctx
+                .Restaurants
+                .Where(r => r.Name == "Hästen");
+            var newRestaurant = query.First();
+
+            Assert.Equal("Hästen", newRestaurant.Name);
 
         }
     }

@@ -14,7 +14,7 @@ namespace DataLayer.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<LunchBox> LunchBoxes { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
-
+        public DbSet<Admin> Admin { get; set; }
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<Customer>(c =>
@@ -37,6 +37,12 @@ namespace DataLayer.Data
                 l.HasIndex(l => l.Dish);
                 l.HasIndex(l => l.FoodType);
                 l.HasIndex(l => l.Price);
+            });
+            modelbuilder.Entity<Admin>(a =>
+            {
+                a.HasIndex(a => a.UserName)
+                    .IsUnique();
+                a.HasIndex(a => a.Password);
             });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -140,6 +146,13 @@ namespace DataLayer.Data
                 }
             };
             LunchBoxes.AddRange(lunchboxes);
+
+            var admins = new Admin[]
+            {
+                new() {UserName = "Admin", Password = "Password"}
+            };
+            Admin.AddRange(admins);
+            
             SaveChanges();
         }
     }

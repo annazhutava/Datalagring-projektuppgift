@@ -32,16 +32,19 @@ namespace DataLayer.Backend
             }
             Console.Write("\n");
         }
-
-        public void RemoveUser(string username)
+        public void DeleteUsers(int input)
         {
             using var ctx = new TrackingDb();
-            var query = ctx.Customers
-                .Where(c => c.Email == username);
-            var user = query.First();
-
-            ctx.Remove(user);
-            ctx.SaveChanges();
+            var selectUser = ctx.Customers.FirstOrDefault(c => c.Id == input);
+            if (selectUser != null)
+            {
+                ctx.Remove(selectUser);
+                ctx.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("User don't exist.");
+            }
         }
 
         public void AddRestaurant(string name, string city, string street, string phonenumber)
