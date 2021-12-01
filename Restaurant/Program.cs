@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using DataLayer.Backend;
+﻿using DataLayer.Backend;
 
 
 while (true)
@@ -59,5 +58,3 @@ while (true)
         return;
     }
 }
-
-
