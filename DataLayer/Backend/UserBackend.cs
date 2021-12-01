@@ -110,5 +110,25 @@ namespace DataLayer.Backend
             }
             else { return; }
         }
+        public void SoldLunchboxes(string email)
+        {
+            using var ctx = new TrackingDb();
+            var query = ctx
+                .LunchBoxes
+                .Where(l => l.Customer.Email == email)
+                .OrderBy(l => l.Price)
+                .Include(l => l.Restaurant);
+
+            foreach (var lunchbox in query)
+            {
+                var name = lunchbox.Dish;
+                var restaurant = lunchbox.Restaurant.Name;
+                var price = lunchbox.Price;
+                var id = lunchbox.Id;
+                var type = lunchbox.FoodType;
+                Console.WriteLine($"{id}: {name}({type}), {restaurant}, {price}");
+            }
+            Console.WriteLine("\n");
+        }
     }
 }
