@@ -27,7 +27,7 @@ while (keepRunning)
             Console.WriteLine("Press 4 and 'enter' If you want to see all restaurants");
             Console.WriteLine("Press 5 and 'enter' If you want to add a new restaurant");
             Console.WriteLine("Press 0 and 'enter' To exit");
-            
+
             if (int.TryParse(Console.ReadLine(), out input))
             {
                 switch (input)
@@ -62,7 +62,7 @@ while (keepRunning)
                         string restaurantStreet = Console.ReadLine();
                         Console.WriteLine("Phone-number of restaurant: ");
                         string restaurantPhoneNumber = Console.ReadLine();
-                        
+
                         adminBackend.AddRestaurant(restaurantName, restaurantCity, restaurantStreet, restaurantPhoneNumber);
                         break;
                     case 0:
