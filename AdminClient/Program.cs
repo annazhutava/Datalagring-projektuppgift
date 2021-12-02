@@ -23,9 +23,8 @@ while (keepRunning)
         {
             Console.WriteLine("Press 1 and 'enter' If you want to create and seed the database");
             Console.WriteLine("Press 2 and 'enter' If you want to see all customers");
-            Console.WriteLine("Press 3 and 'enter' If you want to remove a customer");
-            Console.WriteLine("Press 4 and 'enter' If you want to see all restaurants");
-            Console.WriteLine("Press 5 and 'enter' If you want to add a new restaurant");
+            Console.WriteLine("Press 3 and 'enter' If you want to see all restaurants");
+            Console.WriteLine("Press 4 and 'enter' If you want to add a new restaurant");
             Console.WriteLine("Press 0 and 'enter' To exit");
 
             if (int.TryParse(Console.ReadLine(), out input))
@@ -41,18 +40,10 @@ while (keepRunning)
                         adminBackend.ShowUsers();
                         break;
                     case 3:
-                        adminBackend.ShowUsers();
-                        Console.WriteLine("What customer Id do you want to delete?");
-                        if (int.TryParse(Console.ReadLine(), out input))
-                        {
-                            adminBackend.DeleteUsers(input);
-                        }
-                        break;
-                    case 4:
                         Console.WriteLine("All restaurants:");
                         adminBackend.ShowRestaurants();
                         break;
-                    case 5:
+                    case 4:
                         Console.WriteLine("Add new restaurant:");
                         Console.WriteLine("Name of restaurant: ");
                         string restaurantName = Console.ReadLine();
