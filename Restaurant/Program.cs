@@ -5,11 +5,11 @@ while (true)
 {
     var restaurantTools = new RestaurantBackend();
 
-    Console.WriteLine("Pick an option:");
+    Console.WriteLine("Välj ett alternativ:");
     Console.WriteLine("1: Visa alla sålda matlådor för en restaurang");
     Console.WriteLine("2: Lägg till en matlåda för en restaurang");
     Console.WriteLine("3: Visa alla osålda matlådor för en restaurang");
-    Console.WriteLine("4: Exit");
+    Console.WriteLine("4: Avsluta");
 
     var keyInfo = Console.ReadKey();
 
